@@ -39,9 +39,9 @@ git 실행할 프로그램 : bash -리눅스 기반 프로그램
      github 에서는 수정x 로컬보다 최신화 되어서 원격에서 푸쉬를 거부함
    git push origin(파일네임) main(브랜치) 
 명령어
-pwd
-cd
-ls
+pwd 뒤로가기
+cd 들어가기
+ls 뭐있는지 보여줘ㄴ
 git init(깃 레파지토리로 만든다)
 ctrl+v 강제종료
 (shift+insert 리눅스에선 이게 붙여넣기 ctrl+insert는 복사)
@@ -58,3 +58,4 @@ git restore --staged .gitignore ( 스테이징한걸 복원할게 애드한걸 �
 md파일은 #(띄어쓰기) 하고 약간 설명문 같이 올라감 큰글자로
 집에서 작업할때 github 저장된거 가져오고 싶을때 저장하고 싶은 파일에다가 bash 버튼 누르고git clone 원격 레파지토리 주소 붙이고 치면 저장됨
 이클립스는 경로가 바뀌면 워크스페이스가 바뀌어서 처음화면같이 됨(파일 불러오기도 해야함 알아서 끌어오기 안됨) import => general => 두번째꺼
+clone은 아예 생판 없는 상태에서 다운받는거 git pull origin main은 다른 컴에서 추가작업한거 불러오는거
