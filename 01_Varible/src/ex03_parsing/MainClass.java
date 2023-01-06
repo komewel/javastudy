@@ -5,7 +5,7 @@ public class MainClass {
 	public static void main(String[] args) {
 	
 		//구문 분석(parsing)
-		//문자열을 기본 타입으로 변환하는 과정을 의미한다.
+		//문자열을 기본 타입으로 변환하는 과정을 의미한다.(첫대문자 타입 치고 . 하면 알아서 보여줌)
 		
 		String strScore = "90";
 		String strMoney = "10000000000";
