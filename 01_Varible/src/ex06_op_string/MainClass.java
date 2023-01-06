@@ -1,4 +1,4 @@
-package ex_06_op_string;
+package ex06_op_string;
 
 public class MainClass {
 	
