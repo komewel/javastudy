@@ -25,7 +25,7 @@ public class Ex01_for {
 		}
 		
 	}
-	public static void ex03() {					//연습
+	public static void ex03() {					//연습 (역순으로도 가능함)
 		// 10~1
 		for(int a = 10; a >= 1; a--) {
 			System.out.println(a);

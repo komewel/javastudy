@@ -21,7 +21,7 @@ public class Ex03_break {
 		int a = 1;
 		while(true) { 
 			
-			if(a > 10) {
+			if(a > 10) {  //a가 10을 넘는 순간 멈춰라
 				break;
 			}
 			System.out.println(a);
@@ -55,11 +55,11 @@ public class Ex03_break {
 		for(int n1 = 0; total1 <= goal1; n1++) {
 			total1 += money1;
 			System.out.println(n1 + 1 + "회 모금액" + money1 + "원, 현재 모금액" + total1 + "원");
-		}
+		}   //위에 시스템출력문구마저 반복해줘야 하므로 안에 들어가야 한다.
 		
 	}
 	public static void main(String[] args) {
-		ex03();
+		ex02();
 	}
 
 }
