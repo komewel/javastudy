@@ -16,7 +16,7 @@ public class Ex01_if {
 		//실행문이 1개인 경우 생략할 수 있다.(코드스타일이 다른거라 생략해도되고 안해도 되는데 평균적으로 생략안한다)
 		//실행문이 2개 이상인 경우 반드시 필요하다.
 		
-		int score = 70;
+		int score = 50;
 		
 		if(score >= 60) {
 			System.out.println("합격");

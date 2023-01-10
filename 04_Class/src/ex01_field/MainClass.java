@@ -5,7 +5,7 @@ public class MainClass {
 	public static void main(String[] args) {
 		
 		//User 타입의 객체(=변수, 클래스타입에서만 객체로 부름) 선언
-		User user1;
+		User user1; //선언
 		//User 타입의 객체 생성
 		user1 = new User();
 		//객체 user1의 필드 활용

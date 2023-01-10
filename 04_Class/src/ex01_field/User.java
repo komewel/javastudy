@@ -14,6 +14,6 @@ public class User {
 	String pw;		// null
 	int point;		// 0
 	boolean isvip;	// false
-	Address addr;	// null
+	Address addr;	// null //이걸로 Address필드를 호출할수있는건가?
 
 }
