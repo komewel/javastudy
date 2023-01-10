@@ -126,7 +126,7 @@ public class Ex01_array {
 		System.out.println("최소 : " + min + "점");
 	}
 	public static void ex07() {
-		//배열 초기화 (덮어쓴다 같은 의미)
+		//배열 초기화 (덮어씌운다 같은 의미)
 		int[] arr = {10, 20 ,30};
 		//배열 순회
 		for(int i = 0; i < arr.length; i++) {
@@ -146,7 +146,7 @@ public class Ex01_array {
 	}
 	
 	public static void main(String[] args) {
-		ex09();
+		ex04();
 	}
 
 }

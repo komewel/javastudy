@@ -36,7 +36,7 @@ public class Ex03_advance_for { //배열 전용 for문
 	}
 
 	public static void main(String[] args) {
-		ex02();
+		ex01();
 	}
 
 }
