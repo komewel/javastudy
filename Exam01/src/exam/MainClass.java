@@ -197,8 +197,8 @@ public class MainClass {
 			}
 		}
 		
-		
-		
+		System.out.println(condition1); 
+		System.out.println(condition2); 
 	}
 	
 	// 문제10. 5명의 이름과 점수를 각각의 배열에 저장하였다.
