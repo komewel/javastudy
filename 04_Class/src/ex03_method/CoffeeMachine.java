@@ -28,7 +28,7 @@ public class CoffeeMachine {
 		CoffeeAndChange cnc = new CoffeeAndChange();
 		cnc.coffee = coffee;		//
 		cnc.change = money - price;
-		return cnc;  //리턴문 다음문구는 실행을 안하므로 이 뒤에 쓰기x
+		return cnc;  //리턴문 다음문구는 실행을 안하므로 이 뒤에 쓰기x //coffeemachine 호출한 그래로 반환값으로 돌아간다.
 		
 	
 	}

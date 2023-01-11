@@ -9,7 +9,7 @@ public class User {
 	 	3. 
 		 	
 	 */
-		
+		//필드들
 	String id;		// null //String타입 new 선언을 안해줘도 쓸수있다 java의 특별한능력
 	String pw;		// null
 	int point;		// 0
