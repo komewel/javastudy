@@ -1,0 +1,110 @@
+자바를 설치해 주는 파일(설치가 끝나면 지워도 상관없음)
+C:/GDJ61/installer/jdk-11.0.17_windows-x64_bin.exe
+
+자바 설치는 기본 경로 사용합니다.
+자바 기본 경로
+C:\Program Files\Java\jdk-11.0.17
+
+환경 변수 등록
+C:\Program Files\Java\jdk-11.0.17 경로를
+JAVA_HOME이라는 이름으로 컴퓨터에 등록하기
+
+Path 등록
+JAVA_HOME 디렉터리에 있는 bin 디렉터리에 있는
+모든 파일은 어디서든지 실행할 수 있도록 등록하기
+%JAVA_HOME%\bin
+
+자바코드작성 (소스)
+ -  : javac.exe
+자바바이트코드 (클래스파일)
+ -  : java.exe
+자바실행
+
+git : 형상 관리 도구(소프트웨어 개발 협업 필수 툴)
+
+실행할 프로그램 : bash - 리눅스 기반 프로그램
+명령어
+~   :  홈 디렉터리 (여기서 디텍터리는 파일을 의미)
+/   :  루트 디렉터리
+.   :  현재 디렉터리
+..  :  상위 디렉터리
+-a  :  숨긴파일
+pwd :  뒤로가기
+cd  :  들어가기 (change directory) / ex. cd ..(상위 디렉토리로 변경해주세요)
+ls  :  뭐있는지 보여줘 {ls 파일안에 뭐있는지 보여주는 명령어} {-a 숨긴파일 보여줌}
+git init  :(깃 레파지토리로 만든다)
+ctrl+v    :강제종료
+shift+insert : 리눅스에선 이게 붙여넣기 
+ctrl+insert   : 복사
+git status   : 지금 진행도상황 보여줌
+git log --oneline   :커밋한이력을 볼수있음 --oneline만큼
+git restore --staged .gitignore  :스테이징한걸 복원할게 애드한걸 취소한다
+git reset --hard (..) :커밋한걸 취소한다, (..)으로 돌아간다
+
+
+1. javastudy 디렉터리를 로컬 레파지토리로 등록하기
+   cd C:/GJD61/javastudy
+   git init(=깃 저장소가 되었다)
+   (리눅스에선 .파일명 으로 되어있는 파일은 숨긴파일이란 뜻)
+
+2. 사용자 등록
+   git config user.name '아이디' (얜 파일만, git config --global user.name pc전체를 관리자로 등록)
+   git config user.email '이메일'
+
+3. github 가입
+   github.com
+
+4. github을 이용해 원격 레파지토리 만들기(내컴터 로컬레파지토리랑 원격이랑 연결)
+
+5. github에서 personal access token 만들기
+
+6. 로컬 레파지토리에 원격 레파지토리 등록하기(등록한 이름 origin) (등록한 이름 origin=원격 레파지토리 이름)
+   git remote add origin https://www.github.com/아이디/javastudy.git (git hub에서 주소 복사)
+
+7. 로컬 레파지토리에 파일 추가하기
+
+8. 추가된 파일을 추적 시작하기(무대에 올린다 : staging)
+   git add 안녕하세요.txt
+
+9. 로컬 레파지토리 상태 저장하기(커밋 : commit)
+   git commit -m '커밋메시지'
+
+===== 여기까지 하면 로컬 레파지토리는 마무리되고,,,
+
+10. 로컬 레파지토리의 내용을 원격 레파지토리로 올리기
+    git push origin main 
+    [github 에서는 수정x 로컬보다 최신화 되어서 원격에서 푸쉬를 거부함
+    git push origin(파일네임) main(브랜치)] 
+
+11. 다른장소에서 깃허브 파일 가져올때
+      집에서 작업할때 github 저장된거 가져오고 싶을때 저장하고 싶은 파일에다가 bash 버튼 누르고git clone 원격 레파지토리 주소 붙이고 치면 저장됨
+    이클립스는 경로가 바뀌면 워크스페이스가 바뀌어서 처음화면같이 됨(파일 불러오기도 해야함 알아서 끌어오기 안됨) import => general => 두번째꺼
+    clone은 아예 생판 없는 상태에서 다운받는거 git pull origin main은 다른 컴에서 추가작업한거 불러오는거
+
+1) 올리지 말아햐 할 파일들 (gitignore.io 무엇을 이그노어 파일로 할지 알려줌, 깃허브에서 깃 이그노어 목록을 먼저보고 안올릴거는 안올린다)
+  .gitignore 파일
+   github에 올리지 않을 디렉터리와 파일을 작성하는 파일
+   가장 먼저 github에 올라가 있어야 한다. (git add .gitignore)
+  .gitignore 파일(git에 올리지 않을 파일), .git파일(내모든이력 로컬레파지토리에 이력들이 다 들어있음)
+   touch .gitignore 파일만드는 명령어
+
+2) 깃에서 메모장쓰는법
+   vi .gitignore(파일명) ->i (메모장 인서트모드)->안올리는 파일명 적기->esc->shift+;->wq(나가기) 
+   리눅스에선 #이 주석
+
+3) 깃허브에서 레파지토리 대표문구같이 쓰게 하는법
+   md파일은 #(띄어쓰기) 하고 약간 설명문 같이 올라감 큰글자로
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+이클립스
+
+1. bin 클래스가 저장되는 디텍토리
+제어판-> 자격증명 관리자-> 전사용자 깃정보제거-> windows 자격증명-> git정보 제거-> 원격 레파지토리 제거(맨아래 있음)-> 마이페이지? overview eclipse
+
+2.워크스페이스 자바스터디로 경로설정-> window-> perspective-> open perspective-> java(자바할때 필요한 모드)
+window-> perspective-> preference-> general-> appearance-> colors and fonts-> basic-> 맨아래 text font-> edit-> 폰트설정
+-> appearance 맨아래 workspace-> text file encoding
+-> other ->utf-8(동아시아권 *ms949는 영어, 언어권이 다르므로 바꿔줘야함 안그럼 오류남)
+
+3. 프로젝트 만들때 소스는 위에 저장 컴파일은 아래저장 의미, 패키지는 자바파일(class)모음,패키지이름은 소문자 처음시작은 숫자x, 자바파일=class,클래스이름 처음글자는 대문자,
+단어와단어를 붙일땐 처음은 대문자, class를구성하는 중요한요소 구조는 메소드
