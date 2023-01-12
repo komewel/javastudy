@@ -106,11 +106,12 @@ public class MainClass {
 		for(int i = 0; i < arr.length; i++) {
 			if(arr[i] < 0) {
 				continue;
+			}
+				total = total + arr[i];
 		}
-			total = total + arr[i];
+			System.out.println(total);
 	}
-		System.out.println(total);
-}
+	
 	// 문제7. 제시된 배열에 변수 ch에 저장된 문자가 몇 개 포함되어 있는지 갯수를 구해서 출력하시오.
 	// 예시
 	// 배열에 포함된 h는 2개입니다.
@@ -144,7 +145,7 @@ public class MainClass {
 		case 6: System.out.println("행주"); break;
 		default : System.out.println("아쉽습니다 다음 기회에...");
 		}
-		}
+	}
 		
 		
 	
@@ -224,7 +225,7 @@ public class MainClass {
 	// main 메소드는 그대로 사용합니다.
 	public static void main(String[] args) {
 		System.out.println("=====문제1=====");
-		q1();
+		//q1();
 		System.out.println("=====문제2=====");
 		q2();
 		System.out.println("=====문제3=====");
