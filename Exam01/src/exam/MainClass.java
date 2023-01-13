@@ -6,6 +6,8 @@ public class MainClass {
 	// int serial의 첫 번째 글자는 항상 1 ~ 6 사이의 정수라고 가정한다.
 	// 예시
 	// 남자입니다.
+	//String strNumber = number + ""; 이거하면 문자열로 바뀜 {'1', '2', ............ '7'}
+	//strnumber.charAt(0) % 2 == 1
 	public static void q1() {
 		int number = 1234567;
 		String a = Integer.toString(number);
@@ -51,12 +53,27 @@ public class MainClass {
 	// 5 x 5 = 25
 	public static void q3() {
 		for(int a = 2; a <= 5; a++) {
-			for(int b = 1; b <= 5; b++) {
+			for(int b = 1; b <= 9; b++) {
 				System.out.println(a + " x " + b + " = " + (a * b));
+				if(a == 5 && b == 5) {
+					break; //return; 을 써도 된다
+				}
 			}
+			/* 이런것도 있음
+			outer: //바깥 for문 label
+			for(int a = 2; a <= 9; a++) {
+				inner: //안쪽 for문 label
+				for(int b = 1; b <= 9; b++) {
+					System.out.println(a + " x " + b + " = " + (a * b));
+					if(a == 5 && b == 5) {
+						break; //return; 을 써도 된다
+					}
+				}
+				*/
+		}
 		}
 		
-	}
+	
 	
 	// 문제4. begin부터 end 사이의 모든 정수들의 평균을 출력하시오.
 	// 단, 항상 begin은 end보다 작거나 같은 상태이다.
@@ -69,7 +86,7 @@ public class MainClass {
 		for(int a = begin; a <= end; a++) {
 			total = total + a;
 		}
-		double b = (double)total / (end - begin + 1);
+		double b = (double)total / (end - begin + 1); // +1을 1.0으로 대입해도 double 타입으로 바뀐다
 		System.out.println(b);
 		
 	}
@@ -81,16 +98,14 @@ public class MainClass {
 	public static void q5() {
 		int evenTotal = 0;  // 짝수 합
 		int oddTotal = 0;   // 홀수 합
-		for(int i = 0; i < 100; i++) {
-			if ((i + 1) % 2 == 0) {
-				evenTotal = evenTotal + (i + 1);
+		for(int i = 1; i <= 100; i++) {
+			if (i  % 2 == 0) {
+				evenTotal += i;
+			} else {
+				oddTotal += i;
 			}
 		}
-		for(int i = 0; i < 100; i++) {
-			if ((i + 1) % 2 == 1) {
-				oddTotal = oddTotal + (i + 1);
-			}
-		}
+		
 		System.out.println("짝수 합은 " + evenTotal + "입니다.");
 		System.out.println("홀수 합은 " + oddTotal + "입니다.");
 		
@@ -107,7 +122,7 @@ public class MainClass {
 			if(arr[i] < 0) {
 				continue;
 			}
-				total = total + arr[i];
+				total += arr[i];
 		}
 			System.out.println(total);
 	}
@@ -121,7 +136,7 @@ public class MainClass {
 		int count = 0;
 		for(int i = 0; i < characters.length; i++) {
 			if(characters[i] == ch) {
-				count = count + 1;
+				count++;
 			}
 		}
 		System.out.println("배열에 포함된 h는 " + count + "개입니다.");
@@ -145,6 +160,34 @@ public class MainClass {
 		case 6: System.out.println("행주"); break;
 		default : System.out.println("아쉽습니다 다음 기회에...");
 		}
+		/*
+		 String result = "";
+		 switch(score / 10) {
+		 case 10: 
+		 case 9: result += "냄비";
+		 case 8: result += "식칼";
+		 case 7: result += "도마";
+		 case 6: result += "행주";
+		 }
+		 system.out.println(result);
+		 */
+		/*
+		 String result = ""; 초기화가 안되있어서 갈비지 값을 가지는데 ""을 ""인 공백값을 가지게 된다 
+		  if(score >= 60) {
+		  restult += "행주";
+		  }
+		  if(score >= 70) { else if는 쓰면 안된다 이코드에선
+		  restult += "도마";
+		  }
+		  if(score >= 80) {
+		  restult += "식칼";
+		  }
+		  if(score >= 90) {
+		  restult += "냄비";
+		  }
+		  system.out.println(result);
+		  
+		 */
 	}
 		
 		
@@ -200,6 +243,26 @@ public class MainClass {
 		
 		System.out.println(condition1); 
 		System.out.println(condition2); 
+		/* 
+		 * 쌤 풀이
+		 for(int n = 1; n <= 100; n++) {
+		 	int one = n % 10;
+		 	condition1 = one % 3 == 0 && one != 0;
+		 	int ten = n / 10;
+		 	condition2 = ten % 3 == 0 && ten != 0;
+		 	if(condition1 && condition2) {
+		 	system.out.println("짝짝" + "\t");
+		 	} else if(condition1 || condition2) {
+		 	system.out.println("짝" + "\t");
+		 	} else {
+		 	system.out.println(n + "\t");
+		 	}
+		 	if(n % 10 == 0) {
+		 	system.out.println();
+		 	}
+		 	}
+		 
+		 */
 	}
 	
 	// 문제10. 5명의 이름과 점수를 각각의 배열에 저장하였다.
@@ -218,7 +281,33 @@ public class MainClass {
 				}
 				
 			}
-		}			
+		}	
+		/*  쌤풀이
+		 	int max = scores[0];  50
+		 	int maxNo = 0;		  0
+		 	for(int i = 1; i < scores.length; i++) {
+		 	if(max < scores[i]) {
+		 	max = scores[i];      90
+		 	maxNo = i;			  2
+		 	}
+		 	}
+		 	System.out.println("가장높은 점수름 받은 사람은 " + names[maxNo] + "입니다");
+		 */
+		/* for문이 두번 돌리면 왠만하면 잘못된거 
+		 	for(int i = 1; i < scores.length; i++) {
+		 	if(max < scores[i]) {
+		 	max = scores[i];
+		 	}
+		 	}
+		 	String name;
+		 	for(int i = 1; i < scores.length; i++) {
+		 	if(max < scores[i]) {
+		 	name = names[i];
+		 	}
+		 	}
+		 	System.out.println("가장높은 점수름 받은 사람은 " + name + "입니다");
+		 	
+		 */
 	}
 	
 	
