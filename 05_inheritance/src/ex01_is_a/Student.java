@@ -6,7 +6,7 @@ package ex01_is_a;
 		2. 부모 클래스의 기능을 자기 것처럼 사용할 수 있다.
  */
 
-public class Student extends Person {
+public class Student extends Person { //약간 종속관계 생각하면 된다 학생은 사람이지만 사람이 학생은 말이안되는 논리
 
 	public void study() {
 		System.out.println("공부한다.");
