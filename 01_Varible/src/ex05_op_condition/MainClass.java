@@ -10,7 +10,7 @@ public class MainClass {
 		boolean result2 = a >= b;
 		boolean result3 = a < b;
 		boolean result4 = a <= b;
-		boolean result5 = a == b; // =는 데이터를 넣는다 ==는 완전 동일시
+		boolean result5 = a == b; // =는 데이터값을 저장한다 ==는 완전 동일시
 		boolean result6 = a != b; // !=는 같지않다
 		System.out.println(result1);
 		System.out.println(result2);

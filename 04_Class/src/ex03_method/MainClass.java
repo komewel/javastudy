@@ -17,7 +17,7 @@ public class MainClass {
 	public static void ex02() {
 		CoffeeMachine coffeeMachine = new CoffeeMachine();
 		
-		CoffeeAndChange coffeeAndChange = coffeeMachine.buyCoffee(500, 1);
+		CoffeeAndChange coffeeAndChange = coffeeMachine.buyCoffee(900, 1);
 		System.out.println(coffeeAndChange.coffee);
 		System.out.println(coffeeAndChange.change);
 		
@@ -43,6 +43,6 @@ public class MainClass {
 	
 
 	public static void main(String[] args) {
-		ex01();
+		ex02();
 	}
 }

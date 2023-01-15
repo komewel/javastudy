@@ -26,13 +26,13 @@ public class Ex04_switch {
 		switch(month) {
 		case 12:
 		case 1: 
-		case 2: System.out.println("겨울"); break; //겨울을 출력했으면 그만하세요
+		case 2: System.out.println("겨울"); //겨울을 출력했으면 그만하세요
 		case 3: 
 		case 4: 
-		case 5: System.out.println("봄"); break; //봄을 출력했으면 그만하세요
+		case 5: System.out.println("봄");  //봄을 출력했으면 그만하세요
 		case 6: 
 		case 7: 
-		case 8: System.out.println("여름"); break; //여름을 출력했으면 그만하세요
+		case 8: System.out.println("여름"); //여름을 출력했으면 그만하세요
 		default: System.out.println("가을");
 		}
 		
@@ -123,7 +123,7 @@ public class Ex04_switch {
 	}
 
 	public static void main(String[] args) {
-		ex04();
+		ex01();
 	}
 
 }
