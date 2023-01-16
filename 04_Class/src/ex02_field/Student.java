@@ -4,6 +4,6 @@ public class Student {
 	
 	String stuNo;
 	String name;
-	Score score;
+	Score score; //자식
 
 }
