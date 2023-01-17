@@ -1,6 +1,6 @@
 package ex01_String;
 
-public class MainClass {
+public class Ex01_String {
 	
 	public static void Literal() {
 		
@@ -295,7 +295,6 @@ public class MainClass {
 		System.out.println(String.format("%5s", str));   
 		System.out.println(String.format("%-5s", str));
 	}
-	
 	
 	public static void ex01() {
 		
