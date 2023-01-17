@@ -30,9 +30,9 @@ public class Ex01_System { //UUID처럼 난수 겹치지 않는 수를 이용할
 		long nanoTime1 = System.nanoTime();
 		
 		//작업수행
-		for(char ch = 'A'; ch <= 'Z'; ch++) {
-			str += ch;
-			//sb.append(ch);
+		for(char ch = 'A'; ch <= 'z'; ch++) {
+			//str += ch;
+			sb.append(ch);
 		}
 		//종료시간
 		long nanoTime2 = System.nanoTime();
