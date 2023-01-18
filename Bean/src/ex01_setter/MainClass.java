@@ -14,6 +14,9 @@ public class MainClass {
 		//필드 값 확인(오버라이드의 활용)
 		System.out.println(user);
 		
+		System.out.println("User [id=" + user.getId() + ", pw=" + user.getPw() + "]");
+		//이것이 위에 과정을 단순화 시켜주는 코드인가??
+		
 	}
 
 }

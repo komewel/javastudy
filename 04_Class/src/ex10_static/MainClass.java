@@ -4,7 +4,7 @@ public class MainClass {
 
 	public static void main(String[] args) {
 
-		// static 요소는 갹채를 이용해서 호출할 수 있으나, 권장하지 않는다.
+		// static 요소는 객체를 이용해서 호출할 수 있으나, 권장하지 않는다.
 		
 		MyMath myMath = new MyMath();
 		System.out.println(myMath.PI); //권장하는 방법이 아니니 노란색으로 경고가 뜬다.
