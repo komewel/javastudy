@@ -13,7 +13,7 @@ public class Ex05_Calendar {
 		 */
 	
 		//현재 날짜
-		Calendar now = Calendar.getInstance();
+		Calendar now = Calendar.getInstance(); //이거도 싱글톤이네..
 		
 		//년, 월, 일, 요일 가져오기
 		int year = now.get(Calendar.YEAR);  		//now.get(1)과 동일하게 동작

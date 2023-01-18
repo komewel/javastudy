@@ -5,7 +5,7 @@ public class Practice {
 	private String name;
 	private int age;
 	
-	public Practice() {} //이건 뭔 역할 하는건지 
+	public Practice() {} //이건 뭔 역할 하는건
 	public Practice(String name, int age) {
 		this.name = name;
 		this.age = age;
