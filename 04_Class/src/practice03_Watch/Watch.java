@@ -20,7 +20,7 @@ public class Watch {
 	}
 
 	public void setHour(int hour) {
-		this.hour = hour;
+		this.hour += (this.hour += hour) % 24;
 	}
 
 	public int getMinute() {
@@ -28,7 +28,12 @@ public class Watch {
 	}
 
 	public void setMinute(int minute) {
-		this.minute = minute;
+		this.minute += minute;
+		if(this.minute > 60) {	
+			this.hour += 1;
+		}else {
+		return;
+		}
 	}
 
 	public int getSecond() {
@@ -36,7 +41,10 @@ public class Watch {
 	}
 
 	public void setSecond(int second) {
-		this.second = second;
+		this.second += (this.second += second) % 60;
+	}
+	public void see() {
+		System.out.println(this.hour + "시" + minute + "분" + second + "초");
 	}
 	
 	
