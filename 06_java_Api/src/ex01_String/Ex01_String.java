@@ -160,9 +160,8 @@ public class Ex01_String {
 		
 		int idx1 = slogan.lastIndexOf("걱정");
 		int idx2 = slogan.lastIndexOf("김영환");		
-		System.out.println(idx2);
+		System.out.println(idx1);
 	}
-	
 	
 	public static void starsWith() {
 		
@@ -334,7 +333,7 @@ public class Ex01_String {
 	}
 	
 	public static void main(String[] args) {
-		format();
+		lastindexOf();
 		
 	}
 

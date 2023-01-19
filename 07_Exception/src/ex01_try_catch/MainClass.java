@@ -1,5 +1,6 @@
 package ex01_try_catch;
 
+import java.io.FileReader;
 import java.util.Scanner;
 
 public class MainClass {
@@ -39,10 +40,10 @@ public class MainClass {
 			int[] iNumbers = new int[numbers.length];
 			
 			for(int i = 0; i < numbers.length; i++) {
-				iNumbers[i] = Integer.parseInt(numbers[i]);
+				iNumbers[i] = Integer.parseInt(numbers[i]); //정수로 바꿀수없으니 오류남
 				System.out.println(iNumbers[i]);
 			}
-		} catch(NumberFormatException e) {  //Unchecked Exception이므로 RuntimeException 가능, 모든예외는 Exception으로 처리 가능
+		} catch(NumberFormatException e) {  //Unchecked Exception(try catch문이 없어도 동작함)이므로 RuntimeException 가능, 모든예외는 Exception으로 처리 가능
 			System.out.println("NumberFormatException 오류발생");
 		}
 	}
@@ -66,8 +67,17 @@ public class MainClass {
 			System.out.println("예외가 발생했습니다");
 		}
 	}
+	public static void ex04() {
+		
+		try {
+		FileReader fr = new FileReader("sample.txt");  // 이것만 적으면 오류가 나는데 sample.txt 이 파일이 없을때 대비책이 없기때문에 오류뜨는거임 
+		fr.close();
+		} catch(Exception e) {
+			System.out.println("예외가 발생하였다.");
+		}
+		}
 	
 	public static void main(String[] args) {
-		ex03();
+		ex04();
 	}
 }

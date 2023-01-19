@@ -8,7 +8,7 @@ public class Cart {
 	// new Cart(10), new Cart(20).....
 	public Cart(int cartSize) {
 		products = new Product[cartSize]; //배열생성
-		prodCount = 0; //굳이 0으로 변수 설정안해줘도됨 알아서 초기화됐으니
+		prodCount = 0; //굳이 0으로 변수 초기화 안해줘도됨 알아서 초기화됐으니
 	}
 
 	public Product[] getProducts() {

@@ -44,6 +44,7 @@ public class Ex01_Math_random {
 		String code = sb.toString();
 		System.out.println(code);
 	}
+	
 	public static void main(String[] args) {
 		ex02();
 	}
