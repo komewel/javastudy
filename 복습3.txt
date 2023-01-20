@@ -9,7 +9,7 @@
    .equals는 대소문자도 같아야 같은값 인식
    .equalsIgnorecase는 대소문자가 안같아도 같은값으로 인식
 
-4  .charAt은 문자열의 특정한부분의 문자만 띄어오는 기능을 한다
+4 .charAt은 문자열의 특정한부분의 문자만 띄어오는 기능을 한다
 
 5  .substring 
     .substring(a) 면 a부터 문자열 끝까지
@@ -23,10 +23,43 @@
    주의)  1. 값을 int로 주기 때문에 받는 타입변수도 int여야함
            2. 찾는 문자가 없으면 값을 -1을 값으로 준다.
 
-7. lastindexOf
+7  .lastindexOf
+   .lasrindexOf는 마지막문자열의 시작되는 지점의 인덱스 위치 정보
+   값을 줌 이하 indexOf랑 다른게 없음 
+
+8  .starsWith은 입력받은 문자열로 시작할시 true값을
+   .endsWith은 입력받은 문자열로 끝날시 true값을
+   .matches은 입력받은 문자열이 포함되었을시 true값을
+
+9  .contains는 문자열이 지정된 charSequence 를 포함하면 
+    true값을 charSequence는 String이라고 생각하면 편하다
+
+10  .toUpperCase는 문자열을 대문자로
+     .toLowerCase는 문자열을 소문자로
+
+11  .trim은 문자열을 괄호에 "(" + .. + ")" 보기와 같이 낄이 공백이나 
+     쓸데없는거 다 지워줌 그래서 실수로 공백이 생겼을시 보완해준다.
+
+12   .rePlace은 지정된 문자열에 내가 바꾸고 싶은 구간을 바꿔줄수있다
+      .rePlace("a", "b") a가 b로 바뀌어서 출려된다.
+
+13  .isEmpty는 빈문자열이 있는지 없는지 알려준다
+     .isEmpty는 .trim이랑 같이 자주 쓰는데 이걸 한번에 묶어준게
+     .isBlank이다
+
+14  .format은 지정된 문자열의 형식을 바꿔준다 
+     String.format(a, b) b가 바꿔주고 싶은 문자열 
+  	         a : %o 8진수    	%10d 10자리로오른쪽표시
+		 %d 10진수	%-10d 10자리로왼쪽표시
+		 %x  16진수 소문자
+		 %X  16진수 대문자
+
+15  .stringBuilder는 따로있는 문자열을 하나로 합쳐준다
+     객체화 하고나서  (...).append()로 모아주고 
+       	 	   String a = (...).toString(); 
+
+16.
+ 
 
 
-Map
-HashMap 하나의 요소가 두개의 값으로 저장되는것인데 이뜻은 
-전에 예를들어 int라는 타입을 선언하면 메모리가 할당되고 값을 저장하는
-건데
+

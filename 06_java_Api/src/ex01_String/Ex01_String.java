@@ -180,8 +180,8 @@ public class Ex01_String {
 			System.out.println("김씨다.");
 		} else {
 			System.out.println("김씨가 아니다.");
-		}
-		
+		}	
+
 	}
 		
 	public static void contains() {
@@ -243,7 +243,7 @@ public class Ex01_String {
 		//모든 문자a를 b로 다 바꾸는기능
 		
 		String ip = "61.78.121.242";
-		String replacedip = ip.replaceAll(".", "_"); //61_78_121_242을 기대하지만 다른 정답이 나옴(정규식에서 마침표는 모든 문자를 의미함)
+		String replacedip = ip.replaceAll("1", "_"); //61_78_121_242을 기대하지만 다른 정답이 나옴(정규식에서 마침표는 모든 문자를 의미함)
 		System.out.println(replacedip);
 		
 	}
@@ -293,6 +293,7 @@ public class Ex01_String {
 		System.out.println(String.format("%-10d", number));  // %-10d : 10자리로 표시하시오. 숫자는 왼쪽에 표시하시오.
 		System.out.println(String.format("%5s", str));   
 		System.out.println(String.format("%-5s", str));
+		
 	}
 	
 	public static void ex01() {
@@ -333,7 +334,7 @@ public class Ex01_String {
 	}
 	
 	public static void main(String[] args) {
-		lastindexOf();
+		format();
 		
 	}
 
