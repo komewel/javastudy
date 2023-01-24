@@ -1,5 +1,9 @@
 package practice01;
 
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Scanner;
+
 public class MainClass {
 
 	// 문제1. 가위바위보
@@ -39,12 +43,45 @@ public class MainClass {
 	// 평점은 1 ~ 5 사이 정수로 입력 받는데, 벗어난 범위는 다시 입력 받는다.
 	public static void ex05() {
 		
+		Scanner sc = new Scanner(System.in);
+		
+		
+		while(true) {
+			System.out.println("평점을 입력해주세요.");
+			switch(sc.next()) {
+			case "1": System.out.println("★"); break;
+			case "2": System.out.println("★★"); break;
+			case "3": System.out.println("★★★"); break;
+			case "4": System.out.println("★★★★"); break;
+			case "5": System.out.println("★★★★★"); break;
+			default : System.out.println("1 ~ 5 사이의 점수만 입력해주세요."); break;
+			
+			}
+		}
+		
 	}
 	
 	// 문제6. 비밀번호를 "1234"로 가정한다.
 	// 사용자로부터 비밀번호를 입력 받아서 "1234"와 같으면 "성공", "1234"가 아니면 다시 비밀번호를 입력 받도록 처리하시오.
 	// 비밀번호 입력은 최대 5번으로 제한하고, 5번의 입력이 모두 틀리면 최종적으로 "실패"를 출력하시오.
 	public static void ex06() {
+		
+		Scanner sc = new Scanner(System.in);
+		int a = 0;
+		while(true) {
+			if(a == 5) {
+				System.out.println("실패");
+				return;
+			}
+			System.out.println("비밀번호를 입력하세요.");
+			switch(sc.next()) {
+			case "1234": System.out.println("성공"); return;
+			default : System.out.println("번호를 다시 입력하세요."); a++; break;
+			
+			}
+		}
+		
+		
 		
 	}		
 	
@@ -59,7 +96,25 @@ public class MainClass {
 	// 땡
 	public static void ex07() {
 		
+		Scanner sc = new Scanner(System.in);
+		
+		while(true) {
+		
+		int[] a = {(int)(Math.random() * 9 + 1), (int)(Math.random() * 9 + 1)};
+				
+		System.out.print("문제 " + a[0] + " x " +  a[1] + " >>>");
+		
+		if(a[0] * a[1] == (Integer.parseInt(sc.next()))) {
+			System.out.println("정답"); 
+		} else {
+			System.out.println("땡");
+		}
+		
+		}
+		
+		
 	}
+	
 	
 	// 문제8. 임의의 주민등록번호(personalId)를 분석하여 나이와 성별을 출력하시오.
 	// 나이 : 현재년도 - 태어난년도 + 1
@@ -67,6 +122,45 @@ public class MainClass {
 	// 예시)
 	// 28살 여자입니다.
 	public static void ex08() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		Calendar now = Calendar.getInstance(); 
+		
+		String g = "";
+		
+		String a = sc.next().substring(0,2);
+		
+		int b = Integer.parseInt(a);
+		
+		int c = now.get(Calendar.YEAR);
+		
+		if(c >= 2000) {
+			c -= 2000;
+			if(b > c) {
+				c += 100;
+			}
+		}		
+		
+		int d = c - b + 1;
+		
+		String e = sc.next().substring(7,8);
+		
+		if(e == "1" || e == "3") {
+			
+			g = "남자";
+			
+		} else {
+			
+			g = "여자";
+			
+		}
+		System.out.println(d + " 살" + g + "입니다.");
+		sc.close();
+		
+		
+		
+		
 		
 	}
 	
@@ -77,6 +171,8 @@ public class MainClass {
 	// 변환 전 파일명 >>> happy.jpg
 	// 변환 후 파일명 = happy_1658792128410.jpg
 	public static void ex09() {
+		
+		
 		
 	}
 	
@@ -91,10 +187,12 @@ public class MainClass {
 	// 처음 뵙겠습니다
 	public static void ex10() {
 		
+		
+		
 	}
 	
 	public static void main(String[] args) {
-		ex10();
+		ex08();
 	}
 
 }
