@@ -1,6 +1,6 @@
 package practice;
 
-public class Gun {
+public class Box {
 	
 	
 }
