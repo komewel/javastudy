@@ -17,9 +17,7 @@ public class MainClass {
 	 		4. 경로 구분 방법
 	 		 	1) 윈도우 : 백슬래시(\)
 	 		 	2) 리눅스 : 슬래시(/)
-	 */
-	
-	/*
+	 
 		File dir = new File("C: " + File.separator + "storage");  // \\라고 해야 인식한다, C드라이브 아래 storage 폴더를 의미한다.
 		
 		//없으면 만들고, 있으면 지운다.
@@ -49,7 +47,7 @@ public class MainClass {
 		String sep = File.separator;
 		File dir = new File("C: " + sep + hour + sep + minute + sep + second);
 		
-		if(dir.exists() == false) {
+		if(dir.exists() == false) {   //존재여부
 			dir.mkdirs();
 		}
 		
@@ -58,10 +56,7 @@ public class MainClass {
 		
 		
 	}
-	
-	// 문제1. 현재 시간을 이용하여 디렉터리를 생성하시오
-    //예시( C:14\31\30
-	
+		
 	public static void ex02() throws IOException {  //예외 처리를 ex02 메소드르 호출한 곳으로 넘긴다. 예외를 내가 처리하지 않겠다 ex02에서는 예외처리 안하겠다.
 		
 		File dir = new File("C:" + File.separator + "storage");
@@ -112,8 +107,21 @@ public class MainClass {
 		System.out.println("파일 크기 : " + kb + "KB"); //킬로 바이트 출력(1024바이트 = 1킬로바이트)
 		}
 
+	public static void ex04() {
+		File dir = new File("C:" + File.separator + "Program Files");
+		
+		File[] files = dir.listFiles();
+		
+		for(int i = 0; i < files.length; i++) {
+			if(files[i].isHidden() == false) {
+				
+				System.out.println(files[i].getName());
+			}
+		}
+	}
+	
 	public static void main(String[] args)throws IOException { //main 메소드를 호출하는 곳으로 예외 처리를 넘긴다. (개발자가 try-catch하지 않겠다.) 하나의 방법일뿐 추천 방법은 아니라함
-		ex03();
+		ex04();
 		
 	}
 
