@@ -40,6 +40,9 @@ public class MainClass {
 		
 		
 	}
+	public static void ex04() {
+		
+	}
 
 	public static void main(String[] args) {
 		ex03();

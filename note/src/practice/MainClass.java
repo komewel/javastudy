@@ -2,20 +2,36 @@ package practice;
 
 import java.io.File;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 public class MainClass {
 
 	public static void main(String[] args) {
 		
-		File dir = new File("C:" + File.separator + "storage");
+
+		JSONObject a = new JSONObject();
+		a.put("model", "세탁기");
+		a.put("maker", "삼성");
+		a.put("price", 100);
+		JSONObject b = new JSONObject();
+		b.put("model", "세탁기");
+		b.put("maker", "삼성");
+		b.put("price", 100);
+		JSONObject d = new JSONObject();
+		d.put("model", "세탁기");
+		d.put("maker", "삼성");
+		d.put("price", 100);
 		
-		if(dir.exists() == false) {
-			dir.mkdirs();
-			System.out.println("C:" + File.separator + "storage 생성 완료");
-		} else {
-			// dir.deleteOnExit();  // JVM 실행이 끝나면 지운다.
-			dir.delete();  // 지금 바로 지운다.
-			System.out.println("C:" + File.separator + "storage 삭제 완료");
-		}
+		JSONArray c = new JSONArray();
+		c.put(a);
+		c.put(b);
+		c.put(d);
+		
+		System.out.println(c.toString());
+		
+		
+		
 		}
 	}
 
