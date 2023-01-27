@@ -48,6 +48,13 @@ public class CSVMainClass {
 		
 		List<Map<String, Object>> products = Arrays.asList(product1, product2, product3);
 		
+		/* 위에꺼랑 같지만 다른방식
+		List<Map<String, Object>> products = new ArrayList<Map<String,Object>>();
+		products.add(product1);
+		products.add(product2);
+		products.add(product3);
+		*/
+		
 		File dir = new File("C:" + File.separator + "storage");
 		if(dir.exists() == false) {
 			dir.mkdirs();

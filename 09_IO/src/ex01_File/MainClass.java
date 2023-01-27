@@ -108,12 +108,13 @@ public class MainClass {
 		}
 
 	public static void ex04() {
+		
 		File dir = new File("C:" + File.separator + "Program Files");
 		
-		File[] files = dir.listFiles();
+		File[] files = dir.listFiles();  //배열로 리턴
 		
 		for(int i = 0; i < files.length; i++) {
-			if(files[i].isHidden() == false) {
+			if(files[i].isHidden() == false) {   //숨겨진 파일
 				
 				System.out.println(files[i].getName());
 			}
