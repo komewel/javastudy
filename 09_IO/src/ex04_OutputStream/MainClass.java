@@ -51,6 +51,7 @@ public class MainClass {
 	}
 
 	public static void ex02() {
+		//한글버전
 		
 		File dir = new File("C:" + File.separator + "storage");
 		File file = new File(dir, "ex02.bin");
@@ -84,6 +85,7 @@ public class MainClass {
 		
 	public static void ex03() {
 		
+		//빨리 하기위해 상향버전 앞으로 이거만 한다고 보면됨
 		File dir = new File("C:" + File.separator + "storage");
 		File file = new File(dir, "ex03.bin");
 		
@@ -98,6 +100,7 @@ public class MainClass {
 			bos.write("반갑습니다\n또만나요".getBytes("UTF-8"));
 			
 			//bos.close(); 여기다가 써도됨 권장은 finally문 안에 써야함
+			//이거 안쓰면 아예 내용이 작성 안되네
 			
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -114,9 +117,9 @@ public class MainClass {
 		
 	public static void ex04() {
 		
-		//변수를 그대로 출력하는 DataOutputStream (편한거 같음)
+		//변수를 그대로 출력하는 DataOutputStream 
 		File dir = new File("C:" + File.separator + "storage");
-		File file = new File(dir, "ex04_dat");
+		File file = new File(dir, "ex71_dat");
 		
 		DataOutputStream dos = null;
 		
@@ -152,7 +155,7 @@ public class MainClass {
 	
 	public static void ex05() {
 		
-		// 변수 대신 객체를 그대로 출력하는 ObjectOutputStream
+		// 객체를 그대로 출력하는 ObjectOutputStream
 		
 		File dir = new File("C:" + File.separator + "storage");
 		File file = new File(dir, "ex05.dat");
