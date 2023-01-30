@@ -1,28 +1,39 @@
 package practice;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class MainClass {
 
-	public static void main(String[] args) {
+	public static void ex02_complete() {
 		
-
-		JSONObject a = new JSONObject();
-		a.put("성", "김");
-		a.put("이름", "영환");
-		a.put("성별", "남자");
-		a.put("키", 150);
-		JSONObject b = new JSONObject();
-		b.put("성", "김");
-		b.put("이름", "영환");
-		b.put("성별", "남자");
-		b.put("키", 150);
-		JSONArray c = new JSONArray();
-		c.put(a);
-		c.put(b);
-		System.out.println(c);
+		File file = new File("C:" + File.separator + "storage", "ex03.bin");
+		
+		StringBuilder sb = new StringBuilder();
+		String line = null;
+		BufferedReader br = null;
+		
+		try {
+			br = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
+			while((line = br.readLine()) != null) {
+				sb.append(line);
+			}
+			System.out.println(sb.toString());
+			
+		}catch (IOException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(br != null) {
+					br.close();
+				}
+			}catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
-	
 	}
-
+}
+	
