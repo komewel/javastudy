@@ -1,42 +1,50 @@
 package practice;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
-import java.util.Arrays;
-import java.util.List;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class MainClass {
 
 	public static void main(String[] args) {
 		
 
-		File file = new File("C:" + File.separator + "storage", "ex888.dat");
-		ObjectOutputStream a = null;
+		String apiURL = "https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png";
+		URL url = null;
+		HttpURLConnection huc = null;
+		
+		BufferedInputStream bis = null;
+		BufferedOutputStream bos = null;
+		File file = new File("C:" + File.separator + "storage", "daum2.png");
 		
 		try {
-			a = new ObjectOutputStream(new FileOutputStream(file));
+			url = new URL(apiURL);
+			huc = (HttpURLConnection)url.openConnection();
 			
-			List<Person> b = Arrays.asList(
-					new Person("김영환", 55, 1515, true),
-					new Person("김김김", 85, 1815, true)
-					
-			);
-			
-			Person person = new Person();
-			person.setAge(58);
-			person.setName("여영영");
-			person.setAlive(false);
-			person.setHeight(856);
-			
-			a.writeObject(b);
-			a.writeObject(person);
-			
-			System.out.println(person.toString());
-			System.out.println(b.get(0));
-		}catch (Exception e) {
-			e.printStackTrace();// TODO: handle exception
+			int code = huc.getResponseCode();
+			if(code == HttpURLConnection.HTTP_OK) {
+				
+				bis = new BufferedInputStream(huc.getInputStream());
+				bos = new BufferedOutputStream(new FileOutputStream(file));
+				
+				byte[] b = new byte[10];
+				int readbyte = 0;
+				while((readbyte = bis.read(b)) != -1) {
+					bos.write(b, 0, readbyte);
+				}
+			}
+		}catch (MalformedURLException e) {
+			System.out.println("주소 오류");
+		}catch (IOException e) {
+			e.printStackTrace();
 		}
+
 	}
 	
 }
