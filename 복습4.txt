@@ -1,0 +1,8 @@
+InputStream : 한글처리 못한다.
+OutputStream : 한글 처리 못한다.
+---------------------------------------------------------------------
+
+1. InputStreamReader,OutputStreamWriter로 변환해서 한글 처리하기
+   (권장) 많은 사람들이 씀
+
+2. DataInputStream의 readUTF, DataOutputStream의 writeUTF로 한글 처리하기
