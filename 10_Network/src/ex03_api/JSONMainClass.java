@@ -102,6 +102,7 @@ public class JSONMainClass {
 						
 			con.setRequestMethod("GET");
 			con.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+			//내려받을 타입을 지정해준다. 
 			
 			int responseCode = con.getResponseCode();
 			if(responseCode == HttpURLConnection.HTTP_OK) {

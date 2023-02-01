@@ -103,7 +103,7 @@ public class MainClass {
 		
 		Set<Entry<String, Object>> set = map.entrySet();
 		for(Entry<String, Object> entry : map.entrySet()) {
-			System.out.println(entry.getKey() + " : " + entry.getValue());  //여러가지 데이터를 하나로 모아서 하는방법이 객체화나 맵을 쓴다
+			System.out.println(entry.getKey() + " : " + entry.getValue());
 		}
 		
 	}
