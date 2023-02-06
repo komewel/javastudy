@@ -16,4 +16,5 @@ public class User {
 	boolean isvip;	// false
 	Address addr;	// null //이걸로 Address필드를 호출할수있는건가?
 
+	
 }

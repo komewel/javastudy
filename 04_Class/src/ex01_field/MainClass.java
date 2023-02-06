@@ -20,6 +20,7 @@ public class MainClass {
 		user1.addr.roadaddress = "디지털로";
 		user1.addr.jibunaddress = "가산동";
 		
+		
 		System.out.println("아이디 : " + user1.id);
 		System.out.println("비밀번호 : " + user1.pw);
 		System.out.println("포인트 : " + user1.point);
@@ -55,8 +56,6 @@ public class MainClass {
 		System.out.println("포인트 : " + user2.point);
 		System.out.println("vip 여부 : " + user2.isvip);
 		System.out.println("주소 : " + user2.addr.postcode + " " +  user1.addr.roadaddress + "(" + user1.addr.jibunaddress + ")");
-		
-		
 	}
 
 }

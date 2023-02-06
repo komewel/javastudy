@@ -5,4 +5,7 @@ public class Address {
 	String postcode;
 	String roadaddress;
 	String jibunaddress;
+
+	
+	
 }
