@@ -33,13 +33,13 @@ public class JSONMainClass {
 		
 		try {
 			
-			String sidoName = "서울";
+			
 			
 			StringBuilder sbURL = new StringBuilder();
 			sbURL.append(apiURL);
 			sbURL.append("?serviceKey=" + URLEncoder.encode(serviceKey, "UTF-8"));
 			sbURL.append("&returnType=json");
-			sbURL.append("&sidoName=" + URLEncoder.encode(sidoName, "UTF-8"));
+			sbURL.append("&sidoName=" + URLEncoder.encode("서울", "UTF-8"));
 	
 			url = new URL(sbURL.toString());
 			con = (HttpURLConnection)url.openConnection();
@@ -49,7 +49,7 @@ public class JSONMainClass {
 			
 			int responseCode = con.getResponseCode();
 			
-			if(responseCode == HttpURLConnection.HTTP_OK) {
+			if(con.getResponseCode() == HttpURLConnection.HTTP_OK) {
 				reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 			}else {
 				reader = new BufferedReader(new InputStreamReader(con.getErrorStream()));
@@ -195,7 +195,7 @@ public class JSONMainClass {
 	}
 	
 	public static void main(String[] args) {
-		ex02();
+		ex01();
 		
 	}
 
