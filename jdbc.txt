@@ -1,0 +1,30 @@
+
+
+Class.forName();이름으로 로드한다
+Properties p = new Properties();요소를 빼올라고 클래스를 부른다
+p.load(new BufferedReader(new FileReader("db.properties")));클래스로 기능을 구현해서 분석을한다
+con = DriverManager.getConnection(, );이 정보의 맞는 계정을 찾는다
+
+
+
+Class Member {
+int member_no     Member m = new Member
+String id;
+String name;	m.setMember_no();
+String address; 	m.setid();
+Date join_date	...
+}
+
+member 객체 만드는 이유가 Select 한 정보를 담으려고, select한줄(?)당 하나의 객체가 
+만들어진다.
+
+Connection(Interface) : Oracle DataBase와 연결할 때 사용하는 Connection 인터페이스
+
+Class.forName : 이름으로 클래스를 호출하는 기능
+
+DriverManager.getConnection(url, user, password) : 
+DriverManager가 url, user, password 정보를 가지고 sql에 접속해
+데이터와 상응하는 계정으로 접속한다.
+
+
+
