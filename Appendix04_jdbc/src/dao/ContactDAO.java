@@ -13,6 +13,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import dto.ContactDTO;
@@ -93,7 +95,162 @@ public class ContactDAO {
 		return res;
 		}
 	
+	//CRUD 메소드 -2 (연락처 삭제하기)
+	//1. 반환값   : 0(실패) 또는 1(성공)
+	//2. 매개변수 : int contact_no 변수에는 삭제할 연락처의 고유 번호가 저장되어 있다.
+	public int deleteContact(int contact_no) {
+		
+		try {
+			con = getConnection();
+			sql = "DELETE FROM CONTACT_TBL WHERE CONTACT_NO = ?";
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, contact_no);
+			res = ps.executeUpdate();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return res;
+	}
 	
-	public void 목록보기() { }
+	//CRUD 메소드 -3 (이름을 이용한 연락처 조회하기)
+	//1. 반환값 : List<ContactDTO> , 이름은 unique 하지 않으니까 중복될수 있으니까
+	//2. 매개변수 : String name 변수에는 조회 할 연락처의 이름이 저장되어 있다.
+	public List<ContactDTO> selectContactsByName(String name) {
+		List<ContactDTO> contactList = new ArrayList<ContactDTO>();
+		try {
+			
+			con = getConnection();
+			sql =  "SELECT CONTACT_NO, NAME, TEL, EMAIL, ADDRESS";
+			sql += " FROM CONTACT_TBL";
+			sql += " WHERE NAME = ?";
+			ps = con.prepareStatement(sql);
+			ps.setString(1, name);
+			rs = ps.executeQuery();
+			
+			while(rs.next()) { //조회결과가 있으면
+				//rs 객체는 행 단위로 처리한다.
+				ContactDTO contact = new ContactDTO();
+				contact.setContact_no( rs.getInt("CONTACT_NO") );
+				contact.setName( rs.getString("NAME"));
+				contact.setTel( rs.getString("TEL") );
+				contact.setEmail( rs.getString("EMAIL") );
+				contact.setAddress( rs.getString("ADDRESS") );		
+				
+				contactList.add(contact);
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		
+		return contactList;
+	}
 	
-}
+	//CRUD 메소드 -4 (연락처 수정하기)
+	//1. 반환값   : 0(실패) 또는 1(성공)
+	//2. 매개변수 : ContactDTO contact 객체에는 연락처 정보(name, tel, email, address)가 모두 저장되어 있다.
+	public int updateContact(ContactDTO contact) {
+		
+		try {
+			
+			con = getConnection();
+			sql = "UPDATE CONTACT_TBL";
+			sql += "	SET	NAME = ?, TEL = ?, EMAIL = ?, ADDRESS= ?";
+			sql += " WHERE CONTACT_NO = ?";
+			ps= con.prepareStatement(sql);
+			ps.setString(1, contact.getName());
+			ps.setString(2, contact.getTel());
+			ps.setString(3, contact.getEmail());
+			ps.setString(4, contact.getAddress());
+			ps.setInt(5, contact.getContact_no());
+			res = ps.executeUpdate();
+			
+		}catch (Exception e) {	
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return res;
+	}
+	
+	//CRUD 메소드 -5 (연락처 No를 이용한 연락처 조회하기)
+	//1. 반환값		: ContacrtDTO 
+	//2. 매개변수 	: int contact_no 변수에는 조회할 연락처의 고유 번호가 저장되어 있다.
+	public ContactDTO selectContactByNo(int contact_No) {
+		
+		ContactDTO contact = null;
+		
+		try {
+			con = getConnection();
+			sql = "SELECT CONTACT_NO, NAME, TEL, EMAIL, ADDRESS";
+			sql += " FROM CONTACT_TBL";
+			sql += " WHERE CONTACT_NO = ?";
+			
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, contact_No);
+			rs = ps.executeQuery(); 
+			
+			if(rs.next()) {  //결과가 1개이므로 if
+				contact = new ContactDTO();
+				contact.setContact_no(contact_No);
+				contact.setName( rs.getString(2) );
+				contact.setTel( rs.getString(3) );
+				contact.setEmail( rs.getString(4) );
+				contact.setAddress( rs.getString(5) );
+				
+				
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		
+		return contact;
+	}
+		
+	// CRUD 메소드 - 6 (전체 연락처 조회하기)
+		// 1. 반환값   : List<ContactDTO>
+		// 2. 매개변수 : 없다.
+		public List<ContactDTO> selectAllContacts() {
+			
+			List<ContactDTO> contactList = new ArrayList<ContactDTO>();
+			
+			try {
+				
+				con = getConnection();
+				sql =  "SELECT CONTACT_NO, NAME, TEL, EMAIL, ADDRESS";
+				sql += "  FROM CONTACT_TBL";
+				sql += " ORDER BY CONTACT_NO DESC";
+				ps = con.prepareStatement(sql);
+				rs = ps.executeQuery();
+				
+				while(rs.next()) {
+					
+					ContactDTO contact = new ContactDTO();
+					contact.setContact_no( rs.getInt("CONTACT_NO") );
+					contact.setName( rs.getString("NAME") );
+					contact.setTel( rs.getString("TEL") );
+					contact.setEmail( rs.getString("EMAIL") );
+					contact.setAddress( rs.getString("ADDRESS") );
+					
+					contactList.add(contact);
+					
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				close();
+			}
+			
+			return contactList;
+			
+		}
+		
+		
+	}
