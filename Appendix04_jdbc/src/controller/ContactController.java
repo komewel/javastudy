@@ -10,13 +10,13 @@ public class ContactController {
 	
 	/********** 1. field **********/
 	private Scanner sc;
-	private ContactService service;
+	private ContactService service; //여기서 ContactService 호출할 단축키를 만들고
 	
 	
 	/********** 2. constructor **********/
 	public ContactController() {
-		sc = new Scanner(System.in);
-		service = new ContactServiceImpl();
+		sc = new Scanner(System.in);	//Scanner 클래스를 쓰는이유가 예외처리가 더 쉽고 처리속도가 더 빠르다고 한다.
+		service = new ContactServiceImpl(); //여기서 추상메소드인 ContactService 불러온다 자식 클래스인 ContactServiceimpl의 기능을 쓴다.
 	}
 	
 	
