@@ -63,9 +63,9 @@ public class ContactDAO {
 	//공통 메소드 -2 (사용한 자원 반납)
 	private void close( ) {
 		try {
-			if(rs != null)rs.close();
-			if(ps != null)ps.close();
-			if(con != null)con.close();
+			if(rs != null) rs.close();
+			if(ps != null) ps.close();
+			if(con != null) con.close();
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
