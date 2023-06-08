@@ -14,5 +14,7 @@ public class MainClass {
 		// n을 전달하면 n의 제곱 값을 반환하는 myinterface2 객체를 생성해 보자
 		MyInterface myInterface2 = (a) -> a * a; // return 생략, 한줄이니까 중괄호 생략
 		System.out.println(myInterface2.method(n)); 
+		
+		// 람다를 기반으로 돌아가는 Stream을 활용할때 람다 기본 문법이 큰 힘을 발휘한다고 한다.
 	}
 }
